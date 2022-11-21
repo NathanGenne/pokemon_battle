@@ -9,6 +9,7 @@ $json = require ("test.json");
 $base = "https://pokeapi.co/api/v2/pokemon/";
 $power = 'https://pokeapi.co/api/v2/move/';
 $id = 4;
+$listId = [];
 // for($id = 1; $id<2; $id++) {
 $data = file_get_contents($base.$id."/");
 $test = file_get_contents($power.$id."/");
@@ -38,22 +39,24 @@ echo 'Vitesse :'.$pokemon->stats[5]->base_stat.'<br>';
 //recupère type(s) du pokemon
 echo 'Type :'.$pokemon->types[0]->type->name.'<br>';
 
-//récupère l'image
-echo '<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/'.$id.'.png"><br>';
-echo '<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/'.$id.'.png"><br>';
 
-// Boucle sur les 200 premières attaques
-for ($i = 1; $i < 200; $i++) {
+$max = rand(51,350);
+// Boucle sur un interval de 50 attaques du jeu
+for ($i = $max-25; $i < $max; $i++) {
     $moves = json_decode(file_get_contents($power.$i."/"));
-    // Boucle sur les 152 premiers pokemons
+    // Boucle sur les 152 premiers pokemons du jeu
     for ($j = 0; $j < 152; $j++) {
         if (isset($moves->learned_by_pokemon[$j])) {
             // Si le nom du pokémon ($pokemon->name) correspond à celui d'un des pokémons pouvant apprendre l'attaque sélectionnée, alors on indique que le pokémon sélectionné peut apprendre l'attaque
             if ($moves->learned_by_pokemon[$j]->name == $pokemon->name) {
-                echo '<p style="color:red">'.$pokemon->name.' peut aprendre '.$moves->name.'</p>';
+                array_push($listId,$moves->id);
             }
         }
     }
+}
+foreach($listId as $id) {
+    $urlId = json_decode(file_get_contents($power.$id."/"));
+    echo $urlId->name.'<br>';
 }
 
 // }
