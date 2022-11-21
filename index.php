@@ -14,7 +14,6 @@ $data = file_get_contents($base.$id."/");
 $test = file_get_contents($power.$id."/");
 $damage = json_decode($test);
 $pokemon = json_decode($data);
-$moves = json_decode(file_get_contents($power));
 
 // pr
 // print_r($pokemon->abilities);
@@ -39,9 +38,18 @@ echo 'Vitesse :'.$pokemon->stats[5]->base_stat.'<br>';
 //recupère type(s) du pokemon
 echo 'Type :'.$pokemon->types[0]->type->name.'<br>';
 
-
-for ($i=0; $i < $moves) {
-    echo $moves[$i]->learned_by_pokemon;
+// Boucle sur les 200 premières attaques
+for ($i = 1; $i < 200; $i++) {
+    $moves = json_decode(file_get_contents($power.$i."/"));
+    // Boucle sur les 152 premiers pokemons
+    for ($j = 0; $j < 152; $j++) {
+        if (isset($moves->learned_by_pokemon[$j])) {
+            // Si le nom du pokémon ($pokemon->name) correspond à celui d'un des pokémons pouvant apprendre l'attaque sélectionnée, alors on indique que le pokémon sélectionné peut apprendre l'attaque
+            if ($moves->learned_by_pokemon[$j]->name == $pokemon->name) {
+                echo '<p style="color:red">'.$pokemon->name.' peut aprendre '.$moves->name.'</p>';
+            }
+        }
+    }
 }
 
 // }
