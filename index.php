@@ -38,6 +38,10 @@ echo 'Vitesse :'.$pokemon->stats[5]->base_stat.'<br>';
 //recupère type(s) du pokemon
 echo 'Type :'.$pokemon->types[0]->type->name.'<br>';
 
+//récupère l'image
+echo '<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/'.$id.'.png"><br>';
+echo '<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/'.$id.'.png"><br>';
+
 // Boucle sur les 200 premières attaques
 for ($i = 1; $i < 200; $i++) {
     $moves = json_decode(file_get_contents($power.$i."/"));
