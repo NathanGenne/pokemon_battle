@@ -1,0 +1,16 @@
+{
+    "name":"Charmander",
+    "id": 20,
+    "is default": true,
+    "img": "charmander.png",
+    "attacks":[
+        {
+            "name": "fire storm",
+            "type": "fire",
+            "damage": "120",
+            "accuracy": "70",
+            "status effect" : {"status": "fire", "probability": "15"},
+            "category": "special"
+        }
+    ]
+}
