@@ -2,61 +2,15 @@
 
 require_once 'models/Pokemon.php';
 require_once 'models/User.php';
-
-$json = require ("test.json");
+session_start();
+$pokeListe = [1,3,5,7,2,4,6,8,10,9];
 ?>
-<?php 
-$base = "https://pokeapi.co/api/v2/pokemon/";
-$power = 'https://pokeapi.co/api/v2/move/';
-$id = 4;
-$listId = [];
-// for($id = 1; $id<2; $id++) {
-$data = file_get_contents($base.$id."/");
-$test = file_get_contents($power.$id."/");
-$damage = json_decode($test);
-$pokemon = json_decode($data);
-
-// pr
-// print_r($pokemon->abilities);
-// print_r($damage->power);
-
-//recupère index
-echo 'Index :'.$id.'<br>';
-//recupère nom du pokemon
-echo 'Nom :'.$pokemon->name.'<br>';
-//recupère stat 0 (PV)
-echo 'PV :'.$pokemon->stats[0]->base_stat.'<br>';
-//recupère stat 1 (Attack)
-echo 'Attaque :'.$pokemon->stats[1]->base_stat.'<br>';
-//recupère stat 2 (Defense)
-echo 'Défense :'.$pokemon->stats[2]->base_stat.'<br>';
-//recupère stat 3 (Spe. Attack)
-echo 'Attaque Spé :'.$pokemon->stats[3]->base_stat.'<br>';
-//recupère stat 4 (Spe. Defense)
-echo 'Défense Spé :'.$pokemon->stats[4]->base_stat.'<br>';
-//recupère stat 5 (Speed)
-echo 'Vitesse :'.$pokemon->stats[5]->base_stat.'<br>';
-//recupère type(s) du pokemon
-echo 'Type :'.$pokemon->types[0]->type->name.'<br>';
-
-
-$max = rand(51,350);
-// Boucle sur un interval de 50 attaques du jeu
-for ($i = $max-25; $i < $max; $i++) {
-    $moves = json_decode(file_get_contents($power.$i."/"));
-    // Boucle sur les 152 premiers pokemons du jeu
-    for ($j = 0; $j < 152; $j++) {
-        if (isset($moves->learned_by_pokemon[$j])) {
-            // Si le nom du pokémon ($pokemon->name) correspond à celui d'un des pokémons pouvant apprendre l'attaque sélectionnée, alors on indique que le pokémon sélectionné peut apprendre l'attaque
-            if ($moves->learned_by_pokemon[$j]->name == $pokemon->name) {
-                array_push($listId,$moves->id);
-            }
-        }
+<?php for($i=0; $i < count($pokeListe); $i++) : ?>
+<a href="controller/pokemon_controller.php?id=<?= $pokeListe[$i] ?>">id: <?= $pokeListe[$i] ?></a>
+<?php endfor; ?>
+<?php
+    if(isset($_SESSION["msg"]) && isset($_SESSION["msg2"])) {
+        echo $_SESSION["msg"];
+        echo $_SESSION["msg2"];
     }
-}
-foreach($listId as $id) {
-    $urlId = json_decode(file_get_contents($power.$id."/"));
-    echo $urlId->name.'<br>';
-}
-
-// }
+?>
