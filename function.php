@@ -1,40 +1,33 @@
-<?php 
-require_once '../function.php';
-session_start();
-$pokemon_base = "https://pokeapi.co/api/v2/pokemon/";
-$move_base = 'https://pokeapi.co/api/v2/move/';
+<?php
 
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
+function get_Pokemon_Data_by_ID($id) {
 
-    
+    $pokemon_base = "https://pokeapi.co/api/v2/pokemon/";
 
     $pokemon = json_decode(file_get_contents($pokemon_base.$id."/"));
 
-    $pokeListe = [1,3,5,7,2,4,6,8,10,9];
+    // Recupère les informations nécessaires à la construction d'un Pokémon
+    $poke_stats = ["id" => $id,"name" => $pokemon->name, "PV" => $pokemon->stats[0]->base_stat, "attack" => $pokemon->stats[1]->base_stat, "defense" => $pokemon->stats[2]->base_stat, "attack_spe" => $pokemon->stats[3]->base_stat, "defense_spe" => $pokemon->stats[4]->base_stat, "speed" => $pokemon->stats[5]->base_stat, "type" => $pokemon->types[0]->type->name];
+    
+    return $poke_stats;
+}
 
-    //recupère index
-    $msg = '<br>Index : '.$id.'<br>'.
-    //recupère nom du pokemon
-    'Nom : '.$pokemon->name.'<br>'.
-    //recupère ses stats 0 (PV,Attack,Defense,Spe. Attack,Spe. Defense,Speed)
-    'PV : '.$pokemon->stats[0]->base_stat.'<br>'.
-    'Attaque : '.$pokemon->stats[1]->base_stat.'<br>'.
-    'Défense : '.$pokemon->stats[2]->base_stat.'<br>'.
-    'Attaque Spé : '.$pokemon->stats[3]->base_stat.'<br>'.
-    'Défense Spé : '.$pokemon->stats[4]->base_stat.'<br>'.
-    'Vitesse : '.$pokemon->stats[5]->base_stat.'<br>'.
-    //recupère type(s) du pokemon
-    'Type : '.$pokemon->types[0]->type->name.'<br>';
+
+function get_Random_Attack_by_ID($id) {
+    $pokemon_base = "https://pokeapi.co/api/v2/pokemon/";
+    $move_base = 'https://pokeapi.co/api/v2/move/';
+    $pokemon = json_decode(file_get_contents($pokemon_base.$id."/"));
+    $pokeListe = [1,3,5,7,2,4,6,8,10,9];
 
     // Initialise une table qui récupèrera 2 attaques que le pokémon peut apprendre
     $listId = [];
     // Génère un nombre aléatoire pour sélectionner une liste d'attaques aléatoires
-    $max = rand(31,350);
+    $max = rand(51,350);
     // Initialise un compteur qui s'arrêtera lorsque 2 attaques seront sélectionnées
     $counter = 0;
-    // Boucle sur un interval de 30 attaques du jeu
-    for ($i = $max-30; $i < $max; $i++) {
+    $attack = [];
+    // Boucle sur un interval de 50 attaques du jeu
+    for ($i = $max-50; $i < $max; $i++) {
         $moves = json_decode(file_get_contents($move_base.$i."/"));
         // Boucle sur les x pokemons stockés dans la liste prédéfinie
         for ($j = 0; $j < count($pokeListe); $j++) {
@@ -42,7 +35,9 @@ if (isset($_GET['id'])) {
                 // Si le nom du pokémon ($pokemon->name) correspond à celui d'un des pokémons pouvant apprendre l'attaque sélectionnée, alors on indique que le pokémon sélectionné peut apprendre l'attaque
                 if ($moves->learned_by_pokemon[$pokeListe[$j]]->name == $pokemon->name) {
                     // Condition qui assure que le pokémon possèdera au moins une attaque offensive
+                    echo "attack";
                     if($moves->power != "") {
+                        echo " do_damage";
                         // Le compteur s'incrémente
                         $counter++;
                         // La liste d'id prend l'Id de l'attaque
@@ -61,17 +56,15 @@ if (isset($_GET['id'])) {
     foreach($listId as $id) {
         $urlId = json_decode(file_get_contents($move_base.$id."/"));
 
-        $msg2 = $msg2.'<br><br>Id : '.$urlId->id.'<br>'.
+        $msg2 = '<br><br>Id : '.$urlId->id.'<br>'.
         'Nom : '.$urlId->name.'<br>'.
         'Dégats : '.$urlId->power.'<br>'.
         'Précision : '.$urlId->accuracy.'<br>'.
         'type : '.$urlId->type->name.'<br>';
+
+        array_push($attack,["id" => $urlId->id, "name" => $urlId->name, "power" => $urlId->power, "accuracy" => $urlId->accuracy, "type" => $urlId->type->name]);
     }
 
-    $_SESSION["msg"] = $msg;
-    $_SESSION["msg2"] = $msg2;
-    header('Location: ../index.php');
+    return $attack;
 }
-else {
-    header('Location: ../index.php');
-}
+?>
