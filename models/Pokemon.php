@@ -1,5 +1,5 @@
 <?php
-   class Pokemon {
+   class Pokemon extends Moves{
 
       /** Nom du pokemon
        * @var string
@@ -60,8 +60,10 @@
        * @param int $speed
        * @param int $type
        */
-      public function __construct(string $name, int $health, int $attack, int $attack_spe, int $defense, int $defense_spe, int $speed, string $type )
+      public function __construct(int $id, string $move_name, int $power, int $accuracy, int $chance, string $move_type, int $ailment, int $crit_rate, int $change, int $stat, int $target,string $name, int $health, int $attack, int $attack_spe, int $defense, int $defense_spe, int $speed, string $type )
       {
+
+         parent::__construct($id, $move_name, $power, $accuracy, $chance, $move_type, $ailment, $crit_rate, $change, $stat, $target );
          $this->name   = $name;
          $this->health = $health;
          $this->attack   = $attack;
@@ -227,7 +229,7 @@
       /** Get type du pokemon
        * @return string
        */
-      public function getType(): int
+      public function getType(): string
       {
          return $this->type;
       }

@@ -1,15 +1,15 @@
 <?php
-   class Pokemon {
+   class Moves{
 
       /** Index du pokemon
        * @var int
-       */
+       */ 
       protected $id;
 
       /** Nom de l'attaque
        * @var string
        */
-      protected $name;
+      protected $move_name;
 
       /** attaque du pokemon
        * @var int
@@ -31,7 +31,7 @@
       /** type d'attaque du pokemon
        * @var string
        */
-      protected $type;
+      protected $move_type;
 
       /** effet de status du pokemon
        * @var int 
@@ -63,11 +63,11 @@
 
       /** Construct du personnage
        * @param int $id
-       * @param string $name
+       * @param string $move_name
        * @param int $power
        * @param int $accuracy
        * @param int $chance
-       * @param int $type
+       * @param int $move_type
        * @param int $ailment
        * @param int $crit_rate
        * @param int $change
@@ -76,14 +76,14 @@
        */
 
 
-      public function __construct(int $id, string $name, int $power, int $accuracy, int $chance, string $type, int $ailment, int $crit_rate, int $change, int $stat, int $target )
+      public function __construct(int $id, string $move_name, int $power, int $accuracy, int $chance, string $move_type, int $ailment, int $crit_rate, int $change, int $stat, int $target )
       {
          $this->id   = $id;
-         $this->name = $name;
+         $this->name = $move_name;
          $this->power   = $power;
          $this->accuracy   = $accuracy;
          $this->chance = $chance;
-         $this->type   = $type;
+         $this->type   = $move_type;
          $this->ailment = $ailment;
          $this->crit_rate = $crit_rate;
          $this->change = $change;
@@ -104,12 +104,12 @@
       }
 
       /** Set name
-       * @param string $name
+       * @param string $move_name
        * @return self
        */
-      public function setName( string $name ): self
+      public function setMoveName( string $move_name ): self
       {
-         $this->name = $name;
+         $this->name = $move_name;
          return $this;
       }
 
@@ -146,12 +146,12 @@
 
 
       /** Set type
-       * @param string $type
+       * @param string $move_type
        * @return self
        */
-      public function setType( int $type ): self
+      public function setMoveType( int $move_type ): self
       {
-         $this->type = $type;
+         $this->type = $move_type;
          return $this;
       }
 
@@ -223,7 +223,7 @@
       /** Get la vie du pokemon
        * @return string
        */
-      public function getName(): string
+      public function getMoveName(): string
       {
          return $this->name;
       }
@@ -256,7 +256,7 @@
       /** Get type
        * @return string
        */
-      public function getType(): string
+      public function getMoveType(): string
       {
          return $this->type;
       }
