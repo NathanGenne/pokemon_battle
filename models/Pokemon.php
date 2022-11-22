@@ -6,6 +6,12 @@
        */
       protected $name;
 
+      /** id du pokemon
+       * @var int
+       */
+      protected $id;
+
+
       /** Vie du pokemon
        * @var int
        */
@@ -52,6 +58,7 @@
 
       /** Construct du pokemon
        * @param string $name
+       * @param int $id
        * @param int $health
        * @param int $attack
        * @param int $attack_spe
@@ -60,10 +67,11 @@
        * @param int $speed
        * @param int $type
        */
-      public function __construct(int $id, string $move_name, int $power, int $accuracy, int $chance, string $move_type, int $ailment, int $crit_rate, int $change, int $stat, int $target,string $name, int $health, int $attack, int $attack_spe, int $defense, int $defense_spe, int $speed, string $type )
+      public function __construct(int $move_id, int $id, string $move_name, int $power, int $accuracy, int $chance, string $move_type, int $ailment, int $crit_rate, int $change, int $stat, int $target,string $name, int $health, int $attack, int $attack_spe, int $defense, int $defense_spe, int $speed, string $type )
       {
 
-         parent::__construct($id, $move_name, $power, $accuracy, $chance, $move_type, $ailment, $crit_rate, $change, $stat, $target );
+         parent::__construct($move_id, $move_name, $power, $accuracy, $chance, $move_type, $ailment, $crit_rate, $change, $stat, $target );
+         $this->id = $id;
          $this->name   = $name;
          $this->health = $health;
          $this->attack   = $attack;

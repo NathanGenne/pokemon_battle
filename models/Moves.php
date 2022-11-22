@@ -4,7 +4,7 @@
       /** Index du pokemon
        * @var int
        */ 
-      protected $id;
+      protected $move_id;
 
       /** Nom de l'attaque
        * @var string
@@ -62,7 +62,7 @@
 
 
       /** Construct du personnage
-       * @param int $id
+       * @param int $move_id
        * @param string $move_name
        * @param int $power
        * @param int $accuracy
@@ -76,9 +76,9 @@
        */
 
 
-      public function __construct(int $id, string $move_name, int $power, int $accuracy, int $chance, string $move_type, int $ailment, int $crit_rate, int $change, int $stat, int $target )
+      public function __construct(int $move_id, string $move_name, int $power, int $accuracy, int $chance, string $move_type, int $ailment, int $crit_rate, int $change, int $stat, int $target )
       {
-         $this->id   = $id;
+         $this->id   = $move_id;
          $this->name = $move_name;
          $this->power   = $power;
          $this->accuracy   = $accuracy;
@@ -94,12 +94,12 @@
 
 
 /** Set le l'id
-       * @param int $id
+       * @param int $move_id
        * @return self
        */
-      public function setId( string $id ): self
+      public function setMoveId( string $move_id ): self
       {
-         $this->id = $id;
+         $this->id = $move_id;
          return $this;
       }
 
@@ -215,7 +215,7 @@
       /** Get id
        * @return int
        */
-      public function getId(): int
+      public function getMoveId(): int
       {
          return $this->id;
       }
