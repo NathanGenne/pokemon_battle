@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 require_once 'function.php';
 require_once 'models/Pokemon.php';
 require_once 'models/User.php';
@@ -14,7 +14,7 @@ $pokeListe = [3,3,5,7,2,4,6,8,10,9];
     print_r(get_Random_Attack_by_ID($pokeListe[0]));
     
 ?>
-<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $pokeListe[0]?>.png" alt="" srcset=""> -->
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $pokeListe[0]?>.png" alt="" srcset="">
 
 <!DOCTYPE html>
 <html>
