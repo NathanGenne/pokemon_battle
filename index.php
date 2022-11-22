@@ -16,3 +16,4 @@ $pokeListe = [3,3,5,7,2,4,6,8,10,9];
 ?>
 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $pokeListe[0]?>.png" alt="" srcset=""> -->
 
+</html>
