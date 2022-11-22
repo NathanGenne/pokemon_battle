@@ -50,7 +50,7 @@
       /*         Magic Méthode          */
       /* ------------------------------ */
 
-      /** Construct du personnage
+      /** Construct du pokemon
        * @param string $name
        * @param int $health
        * @param int $attack
@@ -58,7 +58,7 @@
        * @param int $defense
        * @param int defense_spe
        * @param int $speed
-       * @param int type
+       * @param int $type
        */
       public function __construct(string $name, int $health, int $attack, int $attack_spe, int $defense, int $defense_spe, int $speed, string $type )
       {
