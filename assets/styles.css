@@ -1,0 +1,921 @@
+
+.mediaViewInfo {
+    --web-view-name: iPhone 13 mini – 24;
+    --web-view-id: iPhone_13_mini__24;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+}
+:root {
+    --web-view-ids: iPhone_13_mini__24;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+#iPhone_13_mini__24 {
+    position: absolute;
+    width: 375px;
+    height: 812px;
+    background-color: rgba(255,255,255,1);
+    overflow: hidden;
+    --web-view-name: iPhone 13 mini – 24;
+    --web-view-id: iPhone_13_mini__24;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+}
+#NoPath_-_Copie_21 {
+    position: absolute;
+    width: 454px;
+    height: 812px;
+    left: -39px;
+    top: 0px;
+    overflow: visible;
+}
+#Rectangle_82 {
+    fill: rgba(0,0,0,0.251);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Rectangle_82 {
+    position: absolute;
+    overflow: visible;
+    width: 454px;
+    height: 876px;
+    left: -39px;
+    top: -27px;
+}
+#NoPath_-_Copie_17 {
+    position: absolute;
+    width: 143px;
+    height: 56px;
+    left: 11px;
+    top: 5px;
+    overflow: visible;
+}
+#Composant_7__12 {
+    position: absolute;
+    width: 320px;
+    height: 45px;
+    left: 114px;
+    top: 74px;
+    overflow: visible;
+}
+#Rectangle_16 {
+    fill: rgba(11,134,230,1);
+    stroke: rgba(252,252,252,1);
+    stroke-width: 2px;
+    stroke-linejoin: bevel;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Rectangle_16 {
+    position: absolute;
+    overflow: visible;
+    width: 320px;
+    height: 45px;
+    left: 0px;
+    top: 0px;
+}
+#Choisissez_vos_Pokemon {
+    left: 8px;
+    top: 13px;
+    position: absolute;
+    overflow: visible;
+    width: 305px;
+    height: 20px;
+    text-align: left;
+    font-family: Retro Gaming;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: rgba(252,252,252,1);
+    text-transform: capitalize;
+}
+#Groupe_7 {
+    position: absolute;
+    width: 39px;
+    height: 33px;
+    left: 49px;
+    top: 144px;
+    overflow: visible;
+    padding: 5px;
+}
+#Rectangle_44 {
+    fill: rgba(255,255,255,1);
+    stroke: rgba(11,134,230,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Rectangle_44 {
+    position: absolute;
+    overflow: visible;
+    width: 39px;
+    height: 33px;
+    left: 0px;
+    top: 0px;
+}
+#p_1 {
+    left: 5px;
+    top: 5px;
+    position: absolute;
+    overflow: visible;
+    width: 30px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Retro Gaming;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: rgba(11,134,230,1);
+    text-transform: uppercase;
+}
+#Composant_12__5 {
+    position: absolute;
+    width: 200px;
+    height: 30px;
+    left: -86px;
+    top: 211px;
+    overflow: visible;
+}
+#Rectangle_14 {
+    fill: rgba(11,134,230,1);
+    stroke: rgba(252,252,252,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Rectangle_14 {
+    position: absolute;
+    overflow: visible;
+    width: 200px;
+    height: 30px;
+    left: 0px;
+    top: 0px;
+}
+#Pikachu {
+    left: 102px;
+    top: 7px;
+    position: absolute;
+    overflow: visible;
+    width: 89px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: 1UP!;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: rgba(252,252,252,1);
+    letter-spacing: 0.87px;
+    text-transform: uppercase;
+}
+#Composant_11__14 {
+    position: absolute;
+    width: 93px;
+    height: 30px;
+    left: 21px;
+    top: 257px;
+    overflow: visible;
+    padding: 10px;
+}
+#Rectangle_15 {
+    fill: rgba(11,134,230,1);
+    stroke: rgba(252,252,252,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Rectangle_15 {
+    position: absolute;
+    overflow: visible;
+    width: 93px;
+    height: 30px;
+    left: 0px;
+    top: 0px;
+}
+#Statistiques {
+    left: 10px;
+    top: 10px;
+    position: absolute;
+    overflow: visible;
+    width: 74px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Retro Gaming;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 8px;
+    color: rgba(252,252,252,1);
+    text-transform: uppercase;
+}
+#Composant_80__42 {
+    position: absolute;
+    width: 68px;
+    height: 66px;
+    left: 269px;
+    top: 632px;
+    overflow: visible;
+}
+#NoPath_-_Copie_22 {
+    position: absolute;
+    width: 66px;
+    height: 66px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+#NoPath_-_Copie_22_bt {
+    fill: rgba(0,0,0,0.502);
+    stroke: rgba(21,21,21,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.NoPath_-_Copie_22_bt {
+    position: absolute;
+    overflow: visible;
+    width: 68px;
+    height: 66px;
+    left: 0px;
+    top: 0px;
+}
+#Composant_80__43 {
+    position: absolute;
+    width: 68px;
+    height: 66px;
+    left: 191px;
+    top: 632px;
+    overflow: visible;
+}
+#NoPath_-_Copie_22_bv {
+    position: absolute;
+    width: 66px;
+    height: 66px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+#NoPath_-_Copie_22_bw {
+    fill: rgba(0,0,0,0.502);
+    stroke: rgba(21,21,21,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.NoPath_-_Copie_22_bw {
+    position: absolute;
+    overflow: visible;
+    width: 68px;
+    height: 66px;
+    left: 0px;
+    top: 0px;
+}
+#Composant_80__44 {
+    position: absolute;
+    width: 68px;
+    height: 66px;
+    left: 35px;
+    top: 632px;
+    overflow: visible;
+}
+#NoPath_-_Copie_22_by {
+    position: absolute;
+    width: 66px;
+    height: 66px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+#NoPath_-_Copie_22_bz {
+    fill: rgba(0,0,0,0.502);
+    stroke: rgba(21,21,21,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.NoPath_-_Copie_22_bz {
+    position: absolute;
+    overflow: visible;
+    width: 68px;
+    height: 66px;
+    left: 0px;
+    top: 0px;
+}
+#Composant_80__45 {
+    position: absolute;
+    width: 68px;
+    height: 66px;
+    left: 193px;
+    top: 524px;
+    overflow: visible;
+}
+#NoPath_-_Copie_22_b {
+    position: absolute;
+    width: 66px;
+    height: 66px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+#NoPath_-_Copie_22_ca {
+    fill: rgba(0,0,0,0.502);
+    stroke: rgba(21,21,21,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.NoPath_-_Copie_22_ca {
+    position: absolute;
+    overflow: visible;
+    width: 68px;
+    height: 66px;
+    left: 0px;
+    top: 0px;
+}
+#Composant_80__46 {
+    position: absolute;
+    width: 68px;
+    height: 66px;
+    left: 271px;
+    top: 524px;
+    overflow: visible;
+}
+#NoPath_-_Copie_22_cb {
+    position: absolute;
+    width: 66px;
+    height: 66px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+#NoPath_-_Copie_22_cc {
+    fill: rgba(0,0,0,0.502);
+    stroke: rgba(21,21,21,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.NoPath_-_Copie_22_cc {
+    position: absolute;
+    overflow: visible;
+    width: 68px;
+    height: 66px;
+    left: 0px;
+    top: 0px;
+}
+#Composant_80__47 {
+    position: absolute;
+    width: 68px;
+    height: 66px;
+    left: 115px;
+    top: 524px;
+    overflow: visible;
+}
+#NoPath_-_Copie_22_cd {
+    position: absolute;
+    width: 66px;
+    height: 66px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+#NoPath_-_Copie_22_ce {
+    fill: rgba(0,0,0,0.502);
+    stroke: rgba(21,21,21,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.NoPath_-_Copie_22_ce {
+    position: absolute;
+    overflow: visible;
+    width: 68px;
+    height: 66px;
+    left: 0px;
+    top: 0px;
+}
+#Composant_80__48 {
+    position: absolute;
+    width: 68px;
+    height: 66px;
+    left: 113px;
+    top: 632px;
+    overflow: visible;
+}
+#NoPath_-_Copie_22_cf {
+    position: absolute;
+    width: 66px;
+    height: 66px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+#NoPath_-_Copie_22_cg {
+    fill: rgba(0,0,0,0.502);
+    stroke: rgba(21,21,21,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.NoPath_-_Copie_22_cg {
+    position: absolute;
+    overflow: visible;
+    width: 68px;
+    height: 66px;
+    left: 0px;
+    top: 0px;
+}
+#Composant_80__49 {
+    position: absolute;
+    width: 68px;
+    height: 66px;
+    left: 37px;
+    top: 524px;
+    overflow: visible;
+}
+#NoPath_-_Copie_22_ch {
+    position: absolute;
+    width: 66px;
+    height: 66px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+#NoPath_-_Copie_22_ci {
+    fill: rgba(0,0,0,0.502);
+    stroke: rgba(21,21,21,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.NoPath_-_Copie_22_ci {
+    position: absolute;
+    overflow: visible;
+    width: 68px;
+    height: 66px;
+    left: 0px;
+    top: 0px;
+}
+#n_5-653763_pikachu-pokemon-pok {
+    position: absolute;
+    width: 70px;
+    height: 55px;
+    left: 33px;
+    top: 530px;
+    overflow: visible;
+}
+#poke3 {
+    position: absolute;
+    width: 51px;
+    height: 51px;
+    left: 124px;
+    top: 530px;
+    overflow: visible;
+}
+#poke5 {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    left: 198px;
+    top: 529px;
+    overflow: visible;
+}
+#poke6 {
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    left: 270px;
+    top: 521px;
+    overflow: visible;
+}
+#poke4 {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 120px;
+    top: 635px;
+    overflow: visible;
+}
+#poke1 {
+    position: absolute;
+    width: 88px;
+    height: 88px;
+    left: 258px;
+    top: 619px;
+    overflow: visible;
+}
+#poke9 {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 188px;
+    top: 632px;
+    overflow: visible;
+}
+#poke8 {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 29px;
+    top: 623px;
+    overflow: visible;
+}
+#Pikachu_cn {
+    left: 117px;
+    top: 702px;
+    position: absolute;
+    overflow: visible;
+    width: 59px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Retro Gaming;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(252,252,252,1);
+}
+#Pikachu_co {
+    left: 198px;
+    top: 596px;
+    position: absolute;
+    overflow: visible;
+    width: 59px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Retro Gaming;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(252,252,252,1);
+}
+#Pikachu_cp {
+    left: 117px;
+    top: 596px;
+    position: absolute;
+    overflow: visible;
+    width: 59px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Retro Gaming;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(252,252,252,1);
+}
+#Pikachu_cq {
+    left: 39px;
+    top: 702px;
+    position: absolute;
+    overflow: visible;
+    width: 59px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Retro Gaming;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(252,252,252,1);
+}
+#Pikachu_cr {
+    left: 275px;
+    top: 596px;
+    position: absolute;
+    overflow: visible;
+    width: 59px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Retro Gaming;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(252,252,252,1);
+}
+#Pikachu_cs {
+    left: 196px;
+    top: 702px;
+    position: absolute;
+    overflow: visible;
+    width: 59px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Retro Gaming;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(252,252,252,1);
+}
+#Pikachu_cw {
+    left: 39px;
+    top: 596px;
+    position: absolute;
+    overflow: visible;
+    width: 59px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Retro Gaming;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(252,252,252,1);
+}
+#Pikachu_cu {
+    left: 273px;
+    top: 702px;
+    position: absolute;
+    overflow: visible;
+    width: 59px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Retro Gaming;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(252,252,252,1);
+}
+#Pikachu_cw {
+    left: 39px;
+    top: 596px;
+    position: absolute;
+    overflow: visible;
+    width: 59px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Retro Gaming;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(252,252,252,1);
+}
+#Pikachu_cw {
+    left: 39px;
+    top: 596px;
+    position: absolute;
+    overflow: visible;
+    width: 59px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Retro Gaming;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(252,252,252,1);
+}
+#Composant_11__15 {
+    position: absolute;
+    width: 81px;
+    height: 30px;
+    left: 33px;
+    top: 303px;
+    overflow: visible;
+    padding: 10px;
+}
+#Rectangle_15_cy {
+    fill: rgba(11,134,230,1);
+    stroke: rgba(252,252,252,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Rectangle_15_cy {
+    position: absolute;
+    overflow: visible;
+    width: 81px;
+    height: 30px;
+    left: 0px;
+    top: 0px;
+}
+#Techniques {
+    left: 10px;
+    top: 10px;
+    position: absolute;
+    overflow: visible;
+    width: 62px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Retro Gaming;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 8px;
+    color: rgba(252,252,252,1);
+    text-transform: uppercase;
+}
+#Ellipse_3 {
+    fill: rgba(255,255,255,1);
+    stroke: rgba(11,134,230,1);
+    stroke-width: 4px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Ellipse_3 {
+    position: absolute;
+    overflow: visible;
+    width: 200px;
+    height: 200px;
+    left: 88px;
+    top: 749px;
+}
+#VALIDER {
+    left: 136px;
+    top: 781px;
+    position: absolute;
+    overflow: visible;
+    width: 105px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: 04b 30;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    color: rgba(11,134,230,1);
+}
+#Composant_7__13 {
+    position: absolute;
+    width: 375px;
+    height: 60px;
+    left: 0px;
+    top: 418px;
+    overflow: visible;
+}
+#Rectangle_16_c {
+    fill: rgba(13,71,154,1);
+    stroke: rgba(252,252,252,1);
+    stroke-width: 2px;
+    stroke-linejoin: bevel;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Rectangle_16_c {
+    position: absolute;
+    overflow: visible;
+    width: 375px;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+}
+#VS {
+    left: 165px;
+    top: 376px;
+    position: absolute;
+    overflow: visible;
+    width: 46px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 60px;
+    color: rgba(252,252,252,1);
+    vertical-align: sub;
+}
+#Rectangle_84 {
+    fill: rgba(11,134,230,1);
+    stroke: rgba(252,252,252,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Rectangle_84 {
+    position: absolute;
+    overflow: visible;
+    width: 54px;
+    height: 60px;
+    left: 321px;
+    top: 418px;
+}
+#Rectangle_85 {
+    fill: rgba(11,134,230,1);
+    stroke: rgba(252,252,252,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Rectangle_85 {
+    position: absolute;
+    overflow: visible;
+    width: 54px;
+    height: 60px;
+    left: 270px;
+    top: 418px;
+}
+#Rectangle_86 {
+    fill: rgba(11,134,230,1);
+    stroke: rgba(252,252,252,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Rectangle_86 {
+    position: absolute;
+    overflow: visible;
+    width: 54px;
+    height: 60px;
+    left: 219px;
+    top: 418px;
+}
+#Rectangle_87 {
+    fill: rgba(11,134,230,1);
+    stroke: rgba(252,252,252,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Rectangle_87 {
+    position: absolute;
+    overflow: visible;
+    width: 54px;
+    height: 60px;
+    left: 97px;
+    top: 418px;
+}
+#Rectangle_88 {
+    fill: rgba(11,134,230,1);
+    stroke: rgba(252,252,252,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Rectangle_88 {
+    position: absolute;
+    overflow: visible;
+    width: 54px;
+    height: 60px;
+    left: 50px;
+    top: 418px;
+}
+#Rectangle_89 {
+    fill: rgba(11,134,230,1);
+    stroke: rgba(252,252,252,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Rectangle_89 {
+    position: absolute;
+    overflow: visible;
+    width: 54px;
+    height: 60px;
+    left: 0px;
+    top: 418px;
+}
+#n_5-653763_pikachu-pokemon-pok_db {
+    position: absolute;
+    width: 60px;
+    height: 47px;
+    left: -3px;
+    top: 425px;
+    overflow: visible;
+}
+#n_5-653763_pikachu-pokemon-pok_dc {
+    position: absolute;
+    width: 330px;
+    height: 260px;
+    left: 83px;
+    top: 132px;
+    overflow: visible;
+}
