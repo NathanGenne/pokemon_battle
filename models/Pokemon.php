@@ -57,29 +57,22 @@
       /* ------------------------------ */
 
       /** Construct du pokemon
-       * @param string $name
-       * @param int $id
-       * @param int $health
-       * @param int $attack
-       * @param int $attack_spe
-       * @param int $defense
-       * @param int defense_spe
-       * @param int $speed
-       * @param int $type
+       * @param object $pokemon
        */
-      public function __construct(int $move_id, int $id, string $move_name, int $power, int $accuracy, int $chance, string $move_type, int $ailment, int $crit_rate, int $change, int $stat, int $target,string $name, int $health, int $attack, int $attack_spe, int $defense, int $defense_spe, int $speed, string $type )
+      public function __construct(object $pokemon )
       {
 
-         parent::__construct($move_id, $move_name, $power, $accuracy, $chance, $move_type, $ailment, $crit_rate, $change, $stat, $target );
-         $this->id = $id;
-         $this->name   = $name;
-         $this->health = $health;
-         $this->attack   = $attack;
-         $this->attack_spe   = $attack_spe;
-         $this->defense = $defense;
-         $this->defense_spe   = $defense_spe;
-         $this->speed = $speed;
-         $this->type = $type;
+         $this->id = $pokemon->id;
+         $this->name   = $pokemon->name;
+         $this->health = $pokemon->PV;
+         $this->attack   = $pokemon->attack;
+         $this->attack_spe   = $pokemon->attack_spe;
+         $this->defense = $pokemon->defense;
+         $this->defense_spe   = $pokemon->defense_spe;
+         $this->speed = $pokemon->speed;
+         $this->type = $pokemon->type;
+         $this->moves = $pokemon->moves;
+
 
       }
 
@@ -176,6 +169,15 @@
       /* ------------------------------ */
       /*          Méthodes Get          */
       /* ------------------------------ */
+
+      /** Get l'index du pokemon
+       * @return int
+       */
+      public function getId(): int
+      {
+         return $this->id;
+      }
+
 
       /** Get le nom du pokemon
        * @return string

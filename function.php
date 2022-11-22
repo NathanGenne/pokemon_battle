@@ -1,13 +1,34 @@
 <?php
 
+
 function get_Pokemon_Data_by_ID($id) {
 
     $pokemon_base = "https://pokeapi.co/api/v2/pokemon/";
-
+    
     $pokemon = json_decode(file_get_contents($pokemon_base.$id."/"));
+
+    /* Récupère 2 attaques du pokémon récupéré */
+    $moves = [];
+    $i=0;
+    while(count($moves)<2)
+    {
+        $move = json_decode(file_get_contents($pokemon->moves[$i]->move->url));
+        if($move->power!=null) {
+            $a = count($moves);
+            $moves[$a]['attaque'] = $move->name;
+            $moves[$a]['degats'] = $move->power;
+            $moves[$a]['précision'] = $move->accuracy;
+
+        }
+        $i++;
+    }
+    
+
 
     // Recupère les informations nécessaires à la construction d'un Pokémon
     $poke_stats = ["id" => $id,"name" => $pokemon->name, "PV" => $pokemon->stats[0]->base_stat, "attack" => $pokemon->stats[1]->base_stat, "defense" => $pokemon->stats[2]->base_stat, "attack_spe" => $pokemon->stats[3]->base_stat, "defense_spe" => $pokemon->stats[4]->base_stat, "speed" => $pokemon->stats[5]->base_stat, "type" => $pokemon->types[0]->type->name];
+
+    $poke_stats['moves'] = $moves;
     
     return $poke_stats;
 }
@@ -66,5 +87,21 @@ function get_Random_Attack_by_ID($id) {
     }
 
     return $attack;
+}
+
+function set_json_file($json_file) {
+
+    $pokeListe = [140,3,12,243,58,6,41,77,9,101];
+        $pokemonDataJson = [];
+        for($i=0; $i < count($pokeListe); $i++) {
+    
+            $pokemon_data = get_Pokemon_Data_by_ID($pokeListe[$i]);
+            $pokemonDataJson[] = json_encode($pokemon_data);
+        }  
+        $pokemonDataJson = json_encode($pokemonDataJson);
+    
+       file_put_contents($json_file, $pokemonDataJson);
+        echo '<hr>File created<hr>';
+    
 }
 ?>
