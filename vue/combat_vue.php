@@ -36,7 +36,7 @@ require_once 'function.php';
         <div class="row row-cols-3">
 
             <!-- équipe du joueur -->
-            <div class="container text-center" style="width: 40%;">
+            <div class="container text-center" style="width: 30%;">
                 <p class="fs-3">Équipe du joueur</p>
                 <div class="row row-cols-3">
                     <?php foreach($team1 as $pokemon) : ?>
@@ -45,14 +45,14 @@ require_once 'function.php';
                             <img class="<?= $$pokemon->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $$pokemon->getId() ?>.png">
                             <p class="name"><?= $$pokemon->getName() ?></p>
                     </div>
-                    
+
                     <?php endforeach; ?>
                 </div>
             </div>
             
             <!-- équipe de l'ordinateur -->
-            <div class="container text-center" style="width: 40%;">
-                <p class="fs-3">Équipe de l'ordinateur</p>
+            <div class="container text-center" style="width: 30%;">
+                <p class="fs-3">Équipe de l'ordi</p>
                 <div class="row row-cols-3">
                     <?php foreach($team2 as $pokemon) : ?>
 
@@ -69,20 +69,7 @@ require_once 'function.php';
 
 
     <div class="text-center">
-        <button class="btn btn-warning">Combattre !</button>
+        <button class="btn btn-warning" onclick="">Combattre !</button>
     </div>
 </body>
 </html>
-
-<script>
-    document.getElementsByClassName("pokemon_btn").innerHTML = 'non';
-    var btns = document.getElementsByClassName("pokemon_btn");
-    for(btns of btn) {
-        btn.addEventListener("click", function() {
-            pokemon = btn.getElementsByClassName("name").innerHTML;
-            team.add(pokemon);
-        });
-    }
-
-    document.getElementById("12").innerHTML = "1";  
-</script>
