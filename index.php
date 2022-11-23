@@ -51,8 +51,9 @@ print_r($charizard->getMove_Name(0));
 print_r($charizard->attack_power(0, 3));
 echo '<br>';
 echo 'Vie du Dracofeu : '.$charizard->getHealth();
-/* echo $raikou->getName().' attaque '.$charizard->getName().' avec '.$raikou->getMove(0)->name.' infligeant '.$charizard->attacked($raikou->attack_power(0));
-echo 'Vie du Dracofeu : '.$charizard->getHealth(); */
+$charizard->attacked($raikou->attack_power(0,$charizard->getId()), $raikou->getMove_Damage_class(0), $raikou->getId());
+echo $raikou->getName().' attaque '.$charizard->getName().' avec '.$raikou->getMove_Name(0).' infligeant '.$charizard->getDamageSuffered().' points de dégats';
+echo 'Vie du Dracofeu : '.$charizard->getHealth();
 
 if(isset($_GET['action'])) {
 	if ($_GET['action'] == 'selector') {

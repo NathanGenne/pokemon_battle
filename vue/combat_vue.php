@@ -1,5 +1,6 @@
 <?php 
 require_once 'function.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -15,46 +16,38 @@ require_once 'function.php';
 <body>
     <div class="container text-center" style="width: 60%;">
         <div class="row row-cols-5">
-            <div class="col">
-                <img id="<?= $venusaur->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $venusaur->getId() ?>.png">
-                <p><?= $venusaur->getName() ?></p>
+
+            <?php foreach($listePokemons as $pokemon) : ?>
+
+            <div class="pokemon_button col">
+                    <img id="<?= $$pokemon->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $$pokemon->getId() ?>.png">
+                    <p class="name"><?= $$pokemon->getName() ?></p>
             </div>
-            <div class="col">
-                <img id="<?= $charizard->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $charizard->getId() ?>.png">
-                <p><?= $charizard->getName() ?></p>
-            </div>
-            <div class="col">
-                <img id="<?= $blastoise->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $blastoise->getId() ?>.png">
-                <p><?= $blastoise->getName() ?></p>
-            </div>
-            <div class="col">
-                <img id="<?= $raikou->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $raikou->getId() ?>.png">
-                <p><?= $raikou->getName() ?></p>
-            </div>
-            <div class="col">
-                <img id="<?= $entei->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $entei->getId() ?>.png">
-                <p><?= $entei->getName() ?></p>
-            </div>
-            <div class="col">
-                <img id="<?= $suicune->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $suicune->getId() ?>.png">
-                <p><?= $suicune->getName() ?></p>
-            </div>
-            <div class="col">
-                <img id="<?= $gyarados->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $gyarados->getId() ?>.png">
-                <p><?= $gyarados->getName() ?></p>
-            </div>
-            <div class="col">
-                <img id="<?= $mewtwo->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $mewtwo->getId() ?>.png">
-                <p><?= $mewtwo->getName() ?></p>
-            </div>
-            <div class="col">
-                <img id="<?= $exploud->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $exploud->getId() ?>.png">
-                <p><?= $exploud->getName() ?></p>
-            </div>
-            <div class="col">
-                <img id="<?= $lucario->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $lucario->getId() ?>.png">
-                <p><?= $lucario->getName() ?></p>
-            </div>
+
+            <script>
+                var buttons = getElementsByClassName("pokemon_button");
+                for(buttons of button) {
+                    button.addEventListener("click", addToTeam);
+                }
+                
+                function addToTeam() {
+                    button.addClass("d-none");
+                }
+            </script>
+
+            <?php
+            endforeach;
+            ?>
+
+            <script>
+                var button = getElementsByClassName("pokemon_button");
+                button.addEventListener("click", addToTeam);
+
+                function addToTeam() {
+                    button.addClass("bg-dark");
+                }
+            </script>
+
         </div>
     </div>
 </body>
