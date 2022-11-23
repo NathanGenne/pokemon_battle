@@ -1,3 +1,36 @@
+<?php 
+
+    $json_file = 'assets/data/pokemons.json';
+    /* Si le fichier pokemons.json n'existe pas ou est vide, alors on le rempli avec la liste de pokemons entrés en paramètre */
+    if ((!file_exists($json_file)) || (file_exists($json_file) && filesize ($json_file) == 0)) {
+        set_json_file($json_file);
+    }
+    $pokeListe = json_decode(file_get_contents($json_file));
+
+
+    /* Instancie les objets pokémons et leurs attaques */
+    foreach($pokeListe as $pokemon)
+    {
+        $pokemon = json_decode($pokemon);
+        $name = $listePokemons[] = $pokemon->name;
+        $$name = new Pokemon($pokemon);
+    }
+
+    /* Génération des 2 équipes */
+    $team1 = getRandomTeam($listePokemons);
+    $team1Members = $team2Members = [];
+    foreach($team1 as $member){
+        $team1Members[] = $$member;
+    }
+    $_SESSION['team1'] = $team1Members;
+
+    $team2 = getRandomTeam($listePokemons);
+    foreach($team2 as $member){
+        $team2Members[] = $$member;
+    }
+    $_SESSION['team2'] = $team2Members;
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,5 +99,7 @@
     <div class="text-center">
         <a class="btn btn-warning" href="index.php?action=combat">Combattre !</a>
     </div>
+
+    
 </body>
 </html>

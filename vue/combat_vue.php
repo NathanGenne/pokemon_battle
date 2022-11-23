@@ -1,10 +1,3 @@
-<?php 
-require_once 'function.php';
-require_once 'models/Moves.php';
-require_once 'models/Pokemon.php';
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +10,7 @@ require_once 'models/Pokemon.php';
 </head>
 <body>
     <!-- Liste des pokémons sélectionnables -->
-    <div class="container text-center" style="width: 60%;">
+    <div class="container text-center" style="width: 90%;">
         <p class="fs-3">Combat</p>
         <div class="row row-cols-3">
 

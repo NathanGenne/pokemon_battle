@@ -28,7 +28,7 @@ function get_Pokemon_Data_by_ID($id) {
     
 
     // Recupère les informations nécessaires à la construction d'un Pokémon
-    $poke_stats = ["id" => $id, "name" => $pokemon->name, "PV" => $pokemon->stats[0]->base_stat, "attack" => $pokemon->stats[1]->base_stat, "defense" => $pokemon->stats[2]->base_stat, "attack_spe" => $pokemon->stats[3]->base_stat, "defense_spe" => $pokemon->stats[4]->base_stat, "speed" => $pokemon->stats[5]->base_stat, "type" => $pokemon->types[0]->type->name, "rage" => 0];
+    $poke_stats = ["id" => $id, "name" => $pokemon->name, "PV" => $pokemon->stats[0]->base_stat+100, "attack" => $pokemon->stats[1]->base_stat, "defense" => $pokemon->stats[2]->base_stat, "attack_spe" => $pokemon->stats[3]->base_stat, "defense_spe" => $pokemon->stats[4]->base_stat, "speed" => $pokemon->stats[5]->base_stat, "type" => $pokemon->types[0]->type->name, "rage" => 0];
     
     // Récupère les attaques choisis pour le pokémon
     $poke_stats['moves'] = $moves;
