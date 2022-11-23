@@ -15,26 +15,49 @@ function get_Pokemon_Data_by_ID($id) {
         $move = json_decode(file_get_contents($pokemon->moves[$i]->move->url));
         if($move->power!=null) {
             $a = count($moves);
-            $moves[$a]['attaque'] = $move->name;
-            $moves[$a]['degats'] = $move->power;
-            $moves[$a]['précision'] = $move->accuracy;
+            $moves[$a]['name'] = $move->name;
+            $moves[$a]['power'] = $move->power;
+            $moves[$a]['accuracy'] = $move->accuracy;
+            $moves[$a]['crit_rate'] = $move->meta->crit_rate;
+            $moves[$a]['type'] = $move->type->name;
+            $moves[$a]['damage_class'] = $move->damage_class->name;
 
         }
         $i++;
     }
     
 
-
     // Recupère les informations nécessaires à la construction d'un Pokémon
-    $poke_stats = ["id" => $id,"name" => $pokemon->name, "PV" => $pokemon->stats[0]->base_stat, "attack" => $pokemon->stats[1]->base_stat, "defense" => $pokemon->stats[2]->base_stat, "attack_spe" => $pokemon->stats[3]->base_stat, "defense_spe" => $pokemon->stats[4]->base_stat, "speed" => $pokemon->stats[5]->base_stat, "type" => $pokemon->types[0]->type->name];
-
+    $poke_stats = ["id" => $id,"name" => $pokemon->name, "PV" => $pokemon->stats[0]->base_stat, "attack" => $pokemon->stats[1]->base_stat, "defense" => $pokemon->stats[2]->base_stat, "attack_spe" => $pokemon->stats[3]->base_stat, "defense_spe" => $pokemon->stats[4]->base_stat, "speed" => $pokemon->stats[5]->base_stat, "type" => $pokemon->types[0]->type->name, "rage" => 0];
+    
+    // Récupère les attaques choisis pour le pokémon
     $poke_stats['moves'] = $moves;
     
     return $poke_stats;
 }
 
+function set_json_file($json_file) {
 
-function get_Random_Attack_by_ID($id) {
+    $pokeListe = [3,6,9,243,244,245,130,150,295,448];
+        $pokemonDataJson = [];
+        for($i=0; $i < count($pokeListe); $i++) {
+    
+            $pokemon_data = get_Pokemon_Data_by_ID($pokeListe[$i]);
+            $pokemonDataJson[] = json_encode($pokemon_data);
+        }  
+        $pokemonDataJson = json_encode($pokemonDataJson);
+    
+       file_put_contents($json_file, $pokemonDataJson);
+        echo '<hr>File created<hr>';
+    
+}
+
+function getRandomTeam() {
+
+}
+
+
+/* function get_Random_Attack_by_ID($id) {
     $pokemon_base = "https://pokeapi.co/api/v2/pokemon/";
     $move_base = 'https://pokeapi.co/api/v2/move/';
     $pokemon = json_decode(file_get_contents($pokemon_base.$id."/"));
@@ -87,21 +110,5 @@ function get_Random_Attack_by_ID($id) {
     }
 
     return $attack;
-}
-
-function set_json_file($json_file) {
-
-    $pokeListe = [140,3,12,243,58,6,41,77,9,101];
-        $pokemonDataJson = [];
-        for($i=0; $i < count($pokeListe); $i++) {
-    
-            $pokemon_data = get_Pokemon_Data_by_ID($pokeListe[$i]);
-            $pokemonDataJson[] = json_encode($pokemon_data);
-        }  
-        $pokemonDataJson = json_encode($pokemonDataJson);
-    
-       file_put_contents($json_file, $pokemonDataJson);
-        echo '<hr>File created<hr>';
-    
-}
+} */
 ?>

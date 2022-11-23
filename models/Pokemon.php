@@ -49,6 +49,11 @@
        */
       protected $type;
 
+      /** Dégats subis par le pokemon
+       * @var int
+       */
+      protected $damageSuffered;
+
 
    /**  */   
 
@@ -59,7 +64,7 @@
       /** Construct du pokemon
        * @param object $pokemon
        */
-      public function __construct(object $pokemon )
+      public function __construct(object $pokemon)
       {
 
          $this->id = $pokemon->id;
@@ -71,6 +76,7 @@
          $this->defense_spe   = $pokemon->defense_spe;
          $this->speed = $pokemon->speed;
          $this->type = $pokemon->type;
+         $this->rage = $pokemon->rage;
          $this->moves = $pokemon->moves;
 
 
@@ -81,7 +87,7 @@
       /*          Méthodes Set          */
       /* ------------------------------ */
 
-      /** Set le nom du personnage
+      /** Set le nom du pokemon
        * @param string $name
        * @return self
        */
@@ -101,7 +107,7 @@
          return $this;
       }
 
-      /** Set l'attaque du personnage
+      /** Set l'attaque du pokemon
        * @param int $attack
        * @return self
        */
@@ -163,7 +169,25 @@
          return $this;
       }
 
+      /** Set la rage du pokemon
+       * @param int $rage
+       * @return self
+       */
+      public function setRage( int $rage ): self
+      {
+         $this->rage = $rage;
+         return $this;
+      }
 
+      /** Set les dégats subis
+       * @param int $damageSuffered
+       * @return self
+       */
+      public function setDamageSuffered( int $damageSuffered ): self
+      {
+         $this->damageSuffered = $damageSuffered;
+         return $this;
+      }
 
 
       /* ------------------------------ */
@@ -177,7 +201,6 @@
       {
          return $this->id;
       }
-
 
       /** Get le nom du pokemon
        * @return string
@@ -244,11 +267,189 @@
          return $this->type;
       }
 
+      /** Get taux de rage du pokemon
+       * @return int
+       */
+      public function getRage(): int
+      {
+         return $this->rage;
+      }
+
+      /** Get le nom d'une attaque selon l'id de l'attaque
+       * @return string
+       */
+      public function getMove_Name($i): string
+      {
+         return $this->moves[$i]->name;
+      }
+
+      /** Get les dégats d'une attaque selon l'id de l'attaque
+       * @return int
+       */
+      public function getMove_Power($i): int
+      {
+         return $this->moves[$i]->power;
+      }
+
+      /** Get la précision d'une attaque selon l'id de l'attaque
+       * @return int
+       */
+      public function getMove_Accuracy($i): int
+      {
+         return $this->moves[$i]->power;
+      }
+
+      /** Get le taux de critique d'une attaque selon l'id de l'attaque
+       * @return int
+       */
+      public function getMove_Crit_rate($i): int
+      {
+         return $this->moves[$i]->crit_rate;
+      }
+
+      /** Get le type de dégat d'une attaque selon l'id de l'attaque
+       * @return string
+       */
+      public function getMove_Damage_class($i): string
+      {
+         return $this->moves[$i]->damage_class;
+      }
+
+      /** Get le type d'une attaque selon l'id de l'attaque
+       * @return string
+       */
+      public function getMove_Type($i): string
+      {
+         return $this->moves[$i]->type;
+      }
+
+      /** Get les dégats subis
+       * @return int
+       */
+      public function getDamageSuffered(): int
+      {
+         return $this->damageSuffered;
+      }
 
 
+      /* ------------------------------ */
+      /*   Fonctions supplémentaires    */
+      /* ------------------------------ */
 
+      /** Attaque le pokémon ennemi sélectionné avec l'attaque sélectionnée
+       * @param int $attack_id
+       * @param int $opponent_id
+       * @return int
+       */
+      public function attack_power($attack_id, $opponent_id): int
+      {
+         $attack_damages = $this->moves[$attack_id]->power/2;
+         $attack_damage_class = $this->getMove_Damage_class($attack_id);
+         $attack_type = $this->getMove_Type($attack_id);
+         $crit_rate = $this->moves[$attack_id]->crit_rate;
 
+         // Si le type de l'attaque correspond au type du pokémon, alors les dégats sont légèrement augmentés
+         if ($attack_type == $this->getType()) {
+            $attack_damages = $attack_damages * 1.15;
+         }
 
+         // Si le taux de critique de l'attaques est non null, alors on calcul si le coup sera critique, auquel cas on double les dégats infligés
+         if ($crit_rate != 0) {
+            $chance = rand(0,100);
+            if ($crit_rate < $chance) {
+               $attack_damages = $attack_damages * 2;
+            }
+         }
+
+         switch ($opponent_id) {
+            case 3 :
+               $charizard
+               break;
+            case 6 :
+               break;
+            case 9 :
+               break;
+            case 243 :
+               break;
+            case 244 :
+               break;
+            case 245 :
+               break;
+            case 130 :
+               break;
+            case 150 :
+               break;
+            case 295 :
+               break;
+            case 448 :
+               break;
+         }
+
+         if ($attack_damage_class)
+
+         // La statistique d'attaque du pokémon contribut à 1/4 aux dégats infligés
+         $total_damages = $this->getAttack()/4 + $attack_damages;
+
+         return $total_damages;
+      }
+
+      /** Calcul les dégats subis par le Pokémon en jeu
+       * @param int $damage
+       * @return self
+       */
+      public function attacked(int $damage): self
+      {
+         // Possible prise en compte des résistances et faiblesses
+
+         $this->setDamageSuffered($damage - $this->getDefense()/4);
+
+         if ($this->getDamageSuffered() < 0) {
+            $this->setDamageSuffered(0);
+         }
+         // Possible vérification que le type de l'attaque reçue est résisté par le type du pokemon
+
+         $this->setHealth($this->getHealth() - $this->getDamageSuffered());
+         $this->setRage($this->getRage() + 1);
+         
+         if($this->getHealth() < 0) {
+            $this->setHealth(0);
+            $this->setRage(0);
+         }
+         return $this;
+      }
+
+      /** Vérifie si le pokémon est KO
+       * @return int
+       */
+      public function is_KO(): int
+      {
+         $is_KO = 0;
+         // Si le pokémon vérifié n'a plus de vie, alors il est considéré comme KO
+         if($this->getHealth() == 0) {
+            $is_KO = 1;
+         }
+
+         return $is_KO;
+      }
+
+      /** Calcul les dégats subis par le Pokémon en jeu si il est affecté par des effets de status
+       * @param string $status_effect
+       * @return self
+       */
+      public function status_attacked(int $status_effect): self
+      {
+         // Si le pokémon est brûlé :
+         if ($status_effect == 'burn') {
+            $this->setHealth($this->getHealth() - 20);
+         }
+
+         // Si le pokémon est empoisonné :
+         if ($status_effect == 'poison') {
+            $this->setHealth($this->getHealth() - $this->getHealth()/8);
+         }
+
+         return $this;
+      }
    }
 
 
