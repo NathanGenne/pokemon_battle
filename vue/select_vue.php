@@ -64,7 +64,7 @@
 
 
     <div class="text-center">
-        <button class="btn btn-warning" onclick="<?php header('location : controller/combat_controller.php') ?>">Combattre !</button>
+        <a class="btn btn-warning" href="index.php?action=combat">Combattre !</a>
     </div>
 </body>
 </html>
