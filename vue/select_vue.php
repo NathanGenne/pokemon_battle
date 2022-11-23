@@ -72,7 +72,7 @@ require_once 'function.php';
 
 
     <div class="text-center">
-        <button class="btn btn-primary" onclick="">Combattre</button>
+        <button class="btn btn-primary"><a href="index.php?action=combat">Combattre !</a></button>
     </div>
 </body>
 </html>

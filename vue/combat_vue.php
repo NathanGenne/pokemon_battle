@@ -1,5 +1,7 @@
 <?php 
 require_once 'function.php';
+require_once 'models/Moves.php';
+require_once 'models/Pokemon.php';
 
 ?>
 
@@ -16,60 +18,36 @@ require_once 'function.php';
 <body>
     <!-- Liste des pokémons sélectionnables -->
     <div class="container text-center" style="width: 60%;">
-        <p class="fs-3">Pokémons disponibles</p>
-        <div class="row row-cols-5">
-
-            <?php foreach($listePokemons as $pokemon) : ?>
-
-            <div class="pokemon_buton col">
-                    <img class="<?= $$pokemon->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $$pokemon->getId() ?>.png">
-                    <p class="name"><?= $$pokemon->getName() ?></p>
-            </div>
-            <?php
-            endforeach;
-            ?>
-        </div>
-    </div>
-
-    <!-- Équipes des joueur et ordinateur -->
-    <div class="container text-center" style="width: 90%;">
+        <p class="fs-3">Combat</p>
         <div class="row row-cols-3">
 
-            <!-- équipe du joueur -->
-            <div class="container text-center" style="width: 30%;">
-                <p class="fs-3">Équipe du joueur</p>
-                <div class="row row-cols-3">
-                    <?php foreach($team1 as $pokemon) : ?>
-
-                    <div class="pokemon_btn col">
-                            <img class="<?= $$pokemon->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $$pokemon->getId() ?>.png">
-                            <p class="name"><?= $$pokemon->getName() ?></p>
-                    </div>
-
-                    <?php endforeach; ?>
-                </div>
-            </div>
+            <?php
+            $team1 = $_SESSION['team1'];
+            $team2 = $_SESSION['team2'];
             
-            <!-- équipe de l'ordinateur -->
-            <div class="container text-center" style="width: 30%;">
-                <p class="fs-3">Équipe de l'ordi</p>
-                <div class="row row-cols-3">
-                    <?php foreach($team2 as $pokemon) : ?>
+            ?>
 
-                    <div class="pokemon_btn col">
-                            <img class="<?= $$pokemon->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $$pokemon->getId() ?>.png">
-                            <p class="name"><?= $$pokemon->getName() ?></p>
-                    </div>
-
-                    <?php endforeach; ?>
-                </div>
+            <div class="pokemon_1 col">
+                <h4 class='row'><?= $team1[0]->getName(); ?></h4>
+                <img class="row <?= $team1[0]->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $team1[0]->getId() ?>.png">
+                <p class='row'>Points de vie : <?= $team1[0]->getHealth(); ?></p>
+                <p class='row'>Type : <?= $team1[0]->getType(); ?></p>
             </div>
+
+            <div class="pokemon_2 col">
+                <h4 class='row'><?= $team2[0]->getName(); ?></h4>
+                <img class="row <?= $team2[0]->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $team2[0]->getId() ?>.png">
+                <p class='row'>Points de vie : <?= $team2[0]->getHealth(); ?></p>
+                <p class='row'>Type : <?= $team2[0]->getType(); ?></p>
+            </div>
+
+            
         </div>
     </div>
-
+        
 
     <div class="text-center">
-        <button class="btn btn-warning" onclick="">Combattre !</button>
+        <button class="btn btn-warning">Attaques</button>
     </div>
 </body>
 </html>

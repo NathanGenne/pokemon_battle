@@ -22,33 +22,20 @@ foreach($pokeListe as $pokemon)
     $$name = new Pokemon($pokemon);
 }
 
-switch ($name) {
-	case 3 :
-		break;
-	case 6 :
-		break;
-	case 9 :
-		break;
-	case 243 :
-		break;
-	case 244 :
-		break;
-	case 245 :
-		break;
-	case 130 :
-		break;
-	case 150 :
-		break;
-	case 295 :
-		break;
-	case 448 :
-		break;
-}
-
 /* Génération des 2 équipes */
 $team1 = getRandomTeam($listePokemons);
+$team1Members = $team2Members = [];
+foreach($team1 as $member){
+	$team1Members[] = $$member;
+}
+$_SESSION['team1'] = $team1Members;
+
 $team2 = getRandomTeam($listePokemons);
-print_r($team2);
+foreach($team2 as $member){
+	$team2Members[] = $$member;
+}
+$_SESSION['team2'] = $team2Members;
+
 
 /* Appel des vues selon la valeur d'action inscrite dans l'url */
 if(isset($_GET['action'])) {
