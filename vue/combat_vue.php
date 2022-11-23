@@ -1,5 +1,6 @@
 <?php 
 require_once 'function.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -13,49 +14,62 @@ require_once 'function.php';
 <title>combat</title>
 </head>
 <body>
+    <!-- Liste des pokémons sélectionnables -->
     <div class="container text-center" style="width: 60%;">
+        <p class="fs-3">Pokémons disponibles</p>
         <div class="row row-cols-5">
-            <div class="col">
-                <img id="<?= $venusaur->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $venusaur->getId() ?>.png">
-                <p><?= $venusaur->getName() ?></p>
+
+            <?php foreach($listePokemons as $pokemon) : ?>
+
+            <div class="pokemon_buton col">
+                    <img class="<?= $$pokemon->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $$pokemon->getId() ?>.png">
+                    <p class="name"><?= $$pokemon->getName() ?></p>
             </div>
-            <div class="col">
-                <img id="<?= $charizard->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $charizard->getId() ?>.png">
-                <p><?= $charizard->getName() ?></p>
+            <?php
+            endforeach;
+            ?>
+        </div>
+    </div>
+
+    <!-- Équipes des joueur et ordinateur -->
+    <div class="container text-center" style="width: 90%;">
+        <div class="row row-cols-3">
+
+            <!-- équipe du joueur -->
+            <div class="container text-center" style="width: 30%;">
+                <p class="fs-3">Équipe du joueur</p>
+                <div class="row row-cols-3">
+                    <?php foreach($team1 as $pokemon) : ?>
+
+                    <div class="pokemon_btn col">
+                            <img class="<?= $$pokemon->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $$pokemon->getId() ?>.png">
+                            <p class="name"><?= $$pokemon->getName() ?></p>
+                    </div>
+
+                    <?php endforeach; ?>
+                </div>
             </div>
-            <div class="col">
-                <img id="<?= $blastoise->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $blastoise->getId() ?>.png">
-                <p><?= $blastoise->getName() ?></p>
-            </div>
-            <div class="col">
-                <img id="<?= $raikou->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $raikou->getId() ?>.png">
-                <p><?= $raikou->getName() ?></p>
-            </div>
-            <div class="col">
-                <img id="<?= $entei->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $entei->getId() ?>.png">
-                <p><?= $entei->getName() ?></p>
-            </div>
-            <div class="col">
-                <img id="<?= $suicune->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $suicune->getId() ?>.png">
-                <p><?= $suicune->getName() ?></p>
-            </div>
-            <div class="col">
-                <img id="<?= $gyarados->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $gyarados->getId() ?>.png">
-                <p><?= $gyarados->getName() ?></p>
-            </div>
-            <div class="col">
-                <img id="<?= $mewtwo->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $mewtwo->getId() ?>.png">
-                <p><?= $mewtwo->getName() ?></p>
-            </div>
-            <div class="col">
-                <img id="<?= $exploud->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $exploud->getId() ?>.png">
-                <p><?= $exploud->getName() ?></p>
-            </div>
-            <div class="col">
-                <img id="<?= $lucario->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $lucario->getId() ?>.png">
-                <p><?= $lucario->getName() ?></p>
+            
+            <!-- équipe de l'ordinateur -->
+            <div class="container text-center" style="width: 30%;">
+                <p class="fs-3">Équipe de l'ordi</p>
+                <div class="row row-cols-3">
+                    <?php foreach($team2 as $pokemon) : ?>
+
+                    <div class="pokemon_btn col">
+                            <img class="<?= $$pokemon->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $$pokemon->getId() ?>.png">
+                            <p class="name"><?= $$pokemon->getName() ?></p>
+                    </div>
+
+                    <?php endforeach; ?>
+                </div>
             </div>
         </div>
+    </div>
+
+
+    <div class="text-center">
+        <button class="btn btn-warning" onclick="">Combattre !</button>
     </div>
 </body>
 </html>

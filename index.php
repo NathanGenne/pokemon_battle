@@ -45,15 +45,12 @@ switch ($name) {
 		break;
 }
 
-print_r($listePokemons);
-echo '<br>';
-print_r($charizard->getMove_Name(0));
-print_r($charizard->attack_power(0, 3));
-echo '<br>';
-echo 'Vie du Dracofeu : '.$charizard->getHealth();
-/* echo $raikou->getName().' attaque '.$charizard->getName().' avec '.$raikou->getMove(0)->name.' infligeant '.$charizard->attacked($raikou->attack_power(0));
-echo 'Vie du Dracofeu : '.$charizard->getHealth(); */
+/* Génération des 2 équipes */
+$team1 = getRandomTeam($listePokemons);
+$team2 = getRandomTeam($listePokemons);
+print_r($team2);
 
+/* Appel des vues selon la valeur d'action inscrite dans l'url */
 if(isset($_GET['action'])) {
 	if ($_GET['action'] == 'selector') {
 		require_once('vue/select_vue.php');

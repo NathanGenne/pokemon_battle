@@ -1,5 +1,5 @@
 <?php
-   class Pokemon extends Moves{
+   class Pokemon{
 
       /** Nom du pokemon
        * @var string
@@ -67,17 +67,17 @@
       public function __construct(object $pokemon)
       {
 
-         $this->id = $pokemon->id;
-         $this->name   = $pokemon->name;
-         $this->health = $pokemon->PV;
-         $this->attack   = $pokemon->attack;
-         $this->attack_spe   = $pokemon->attack_spe;
-         $this->defense = $pokemon->defense;
-         $this->defense_spe   = $pokemon->defense_spe;
-         $this->speed = $pokemon->speed;
-         $this->type = $pokemon->type;
-         $this->rage = $pokemon->rage;
-         $this->moves = $pokemon->moves;
+         $this->id          = $pokemon->id;
+         $this->name        = $pokemon->name;
+         $this->health      = $pokemon->PV;
+         $this->attack      = $pokemon->attack;
+         $this->attack_spe  = $pokemon->attack_spe;
+         $this->defense     = $pokemon->defense;
+         $this->defense_spe = $pokemon->defense_spe;
+         $this->speed       = $pokemon->speed;
+         $this->type        = $pokemon->type;
+         $this->rage        = $pokemon->rage;
+         $this->moves       = $pokemon->moves;
 
 
       }
