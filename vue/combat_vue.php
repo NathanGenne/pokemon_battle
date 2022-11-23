@@ -14,7 +14,9 @@ require_once 'function.php';
 <title>combat</title>
 </head>
 <body>
+    <!-- Liste des pokémons sélectionnables -->
     <div class="container text-center" style="width: 60%;">
+        <p class="fs-3">Pokémons disponibles</p>
         <div class="row row-cols-5">
 
             <?php foreach($listePokemons as $pokemon) : ?>
@@ -26,32 +28,61 @@ require_once 'function.php';
             <?php
             endforeach;
             ?>
-
-            <?php foreach($team as $pokemon) : ?>
-
-            <div class="pokemon_buton col">
-                    <img class="<?= $$pokemon->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $$pokemon->getId() ?>.png">
-                    <p class="name"><?= $$pokemon->getName() ?></p>
-            </div>
-            <?php
-            endforeach;
-            ?>
-
-            <script>
-                var butons = document.getElementsByClassName("pokemon_buton");
-                for(butons of buton) {
-                    buton.addEventListener("click", function() {
-                        pokemon = buton.getElementsByClassName("name").innerHTML;
-                        team.add(pokemon);
-                    });
-                }
-                document.getElementsByClassName("pokemon_buton").innerHTML = butons;
-            </script>
-            
-            <div class='12'>
-
-            </div> 
         </div>
+    </div>
+
+    <!-- Équipes des joueur et ordinateur -->
+    <div class="container text-center" style="width: 90%;">
+        <div class="row row-cols-3">
+
+            <!-- équipe du joueur -->
+            <div class="container text-center" style="width: 40%;">
+                <p class="fs-3">Équipe du joueur</p>
+                <div class="row row-cols-3">
+                    <?php foreach($team1 as $pokemon) : ?>
+
+                    <div class="pokemon_btn col">
+                            <img class="<?= $$pokemon->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $$pokemon->getId() ?>.png">
+                            <p class="name"><?= $$pokemon->getName() ?></p>
+                    </div>
+                    
+                    <?php endforeach; ?>
+                </div>
+            </div>
+            
+            <!-- équipe de l'ordinateur -->
+            <div class="container text-center" style="width: 40%;">
+                <p class="fs-3">Équipe de l'ordinateur</p>
+                <div class="row row-cols-3">
+                    <?php foreach($team2 as $pokemon) : ?>
+
+                    <div class="pokemon_btn col">
+                            <img class="<?= $$pokemon->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $$pokemon->getId() ?>.png">
+                            <p class="name"><?= $$pokemon->getName() ?></p>
+                    </div>
+
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="text-center">
+        <button class="btn btn-warning">Combattre !</button>
     </div>
 </body>
 </html>
+
+<script>
+    document.getElementsByClassName("pokemon_btn").innerHTML = 'non';
+    var btns = document.getElementsByClassName("pokemon_btn");
+    for(btns of btn) {
+        btn.addEventListener("click", function() {
+            pokemon = btn.getElementsByClassName("name").innerHTML;
+            team.add(pokemon);
+        });
+    }
+
+    document.getElementById("12").innerHTML = "1";  
+</script>

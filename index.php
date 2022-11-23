@@ -55,7 +55,8 @@ $charizard->attacked($raikou->attack_power(0,$charizard->getId()), $raikou->getM
 echo $raikou->getName().' attaque '.$charizard->getName().' avec '.$raikou->getMove_Name(0).' infligeant '.$charizard->getDamageSuffered().' points de dégats';
 echo 'Vie du Dracofeu : '.$charizard->getHealth();
 
-$team = getRandomTeam($listePokemons);
+$team1 = getRandomTeam($listePokemons);
+$team2 = getRandomTeam($listePokemons);
 
 if(isset($_GET['action'])) {
 	if ($_GET['action'] == 'selector') {
