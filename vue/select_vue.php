@@ -1,4 +1,9 @@
 <?php 
+require_once 'function.php';
+
+?>
+
+<?php 
 
     $json_file = 'assets/data/pokemons.json';
     /* Si le fichier pokemons.json n'existe pas ou est vide, alors on le rempli avec la liste de pokemons entrés en paramètre */
@@ -34,18 +39,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8"/>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-	<link rel="stylesheet" href="assets\styles.css">
-	<title>combat</title>
-</head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<link rel="stylesheet" href="assets\css\styles.css">
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/minecraftia" type="text/css"/>
 
+<title>combat</title>
+</head>
 <body>
     <!-- Liste des pokémons sélectionnables -->
     <div class="container text-center" style="width: 60%;">
-        <p class="fs-3">Pokémons disponibles</p>
+        <p class="fs-3">Pokémons Disponibles</p>
         <div class="row row-cols-5">
 
             <?php foreach($listePokemons as $pokemon) : ?>
@@ -54,8 +61,9 @@
                     <img class="<?= $$pokemon->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $$pokemon->getId() ?>.png">
                     <p class="name"><?= $$pokemon->getName() ?></p>
             </div>
-
-            <?php endforeach; ?>
+            <?php
+            endforeach;
+            ?>
         </div>
     </div>
 
@@ -97,7 +105,7 @@
 
 
     <div class="text-center">
-        <a class="btn btn-warning" href="index.php?action=combat">Combattre !</a>
+        <button class="btn btn-primary"><a href="index.php?action=combat">Combattre !</a></button>
     </div>
 
     
