@@ -48,7 +48,7 @@ switch ($name) {
 print_r($listePokemons);
 echo '<br>';
 print_r($charizard->getMove_Name(0));
-print_r($charizard->attack_power(0));
+print_r($charizard->attack_power(0, 3));
 echo '<br>';
 echo 'Vie du Dracofeu : '.$charizard->getHealth();
 /* echo $raikou->getName().' attaque '.$charizard->getName().' avec '.$raikou->getMove(0)->name.' infligeant '.$charizard->attacked($raikou->attack_power(0));

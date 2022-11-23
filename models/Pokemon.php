@@ -361,45 +361,77 @@
             }
          }
 
-         switch ($opponent_id) {
-            case 3 :
-               $charizard
-               break;
-            case 6 :
-               break;
-            case 9 :
-               break;
-            case 243 :
-               break;
-            case 244 :
-               break;
-            case 245 :
-               break;
-            case 130 :
-               break;
-            case 150 :
-               break;
-            case 295 :
-               break;
-            case 448 :
-               break;
-         }
-
-         if ($attack_damage_class)
-
          // La statistique d'attaque du pokémon contribut à 1/4 aux dégats infligés
-         $total_damages = $this->getAttack()/4 + $attack_damages;
+         // On vérifie la statistique de dégats adaptée à la classe de dégats de l'attaque
+         if ($attack_damage_class == 'physical') {
+            $total_damages = $this->getAttack()/4 + $attack_damages;
+         }
+         if ($attack_damage_class == 'special') {
+            $total_damages = $this->getAttackSpe()/4 + $attack_damages;
+         }
 
          return $total_damages;
       }
 
       /** Calcul les dégats subis par le Pokémon en jeu
+       * @param string $damage_class
        * @param int $damage
+       * @param int $opponent_id
        * @return self
        */
-      public function attacked(int $damage): self
+      public function attacked(int $damage, string $damage_class, int $opponent_id): self
       {
          // Possible prise en compte des résistances et faiblesses
+
+         // Récupère la catégorie d'attaque de l'adversaire qui défini quelle défense sera affectée
+         if ($damage_class == 'physical') {
+            switch ($opponent_id) {
+               case 3 :
+                  break;
+               case 6 :
+                  break;
+               case 9 :
+                  break;
+               case 243 :
+                  break;
+               case 244 :
+                  break;
+               case 245 :
+                  break;
+               case 130 :
+                  break;
+               case 150 :
+                  break;
+               case 295 :
+                  break;
+               case 448 :
+                  break;
+            }
+         }
+         if ($damage_class == 'special') {
+            switch ($opponent_id) {
+               case 3 :
+                  break;
+               case 6 :
+                  break;
+               case 9 :
+                  break;
+               case 243 :
+                  break;
+               case 244 :
+                  break;
+               case 245 :
+                  break;
+               case 130 :
+                  break;
+               case 150 :
+                  break;
+               case 295 :
+                  break;
+               case 448 :
+                  break;
+            }
+         }
 
          $this->setDamageSuffered($damage - $this->getDefense()/4);
 
@@ -415,6 +447,7 @@
             $this->setHealth(0);
             $this->setRage(0);
          }
+
          return $this;
       }
 
