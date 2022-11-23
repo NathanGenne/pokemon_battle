@@ -1,5 +1,4 @@
 <?php 
-
     $json_file = 'assets/data/pokemons.json';
     /* Si le fichier pokemons.json n'existe pas ou est vide, alors on le rempli avec la liste de pokemons entrés en paramètre */
     if ((!file_exists($json_file)) || (file_exists($json_file) && filesize ($json_file) == 0)) {
@@ -29,6 +28,8 @@
         $team2Members[] = $$member;
     }
     $_SESSION['team2'] = $team2Members;
+
+    $_SESSION['turn'] = 1;
 ?>
 
 <!DOCTYPE html>
@@ -100,6 +101,7 @@
 
 
     <div class="text-center">
+        <button class="btn btn-primary"><a href="index.php?action=selector">Random</a></button>
         <button class="btn btn-primary"><a href="index.php?action=combat">Combattre !</a></button>
     </div>
 

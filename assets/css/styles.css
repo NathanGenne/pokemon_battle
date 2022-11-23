@@ -32,9 +32,18 @@ p {
 	cursor: pointer;
 	display: inline-block;
 	font-size: 2.2rem;
-	margin: 1rem;
 	min-width: 200px;
 	padding: .5rem;
 	text-transform: uppercase;
 	width: auto;
+}
+
+.pokemon_1, .pokemon_2, .move {
+	border: 1px solid white;
+	padding-top: 10px;
+}
+
+a, a:hover {
+	text-decoration: none;
+	color: white;
 }

@@ -11,57 +11,52 @@
 <body>
     <!-- Liste des pokémons sélectionnables -->
     <div class="container text-center" style="width: 90%;">
-        <p class="fs-3">Combat</p>
+        <p class="fs-3">Tour <?= $_SESSION['turn'] ?></p>
         <div class="row row-cols-3">
 
             <?php
             $selected = 0;
-            $attack = 1;
-            // Récupération 
+            // Récupération
             $team1 = $_SESSION['team1'];
             $team2 = $_SESSION['team2'];
             
             ?>
 
             <div class="pokemon_1 col">
-                <h4 class='row'><?= $team1[$selected]->getName(); ?></h4>
+                <p class="row fs-3"><?= $team1[$selected]->getName(); ?></p>
                 <img class="row <?= $team1[$selected]->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $team1[$selected]->getId() ?>.png">
                 <p class='row'>Points de vie : <?= $team1[$selected]->getHealth(); ?></p>
                 <p class='row'>Type : <?= $team1[$selected]->getType(); ?></p>
-                <div class="row row-cols-2">
+                <div class="moves row row-cols-2">
                     <?php foreach($team1[$selected]->moves as $move) : ?>
-                    <div>
+                    <div class="move">
                         <p><?= $move->name ?></p>
                         <p>Degats : <?= $move->power ?></p>
                         <p>Type : <?= $move->type ?></p>
-                        <?php $attack++ ?>
                     </div>
                     <?php endforeach; ?>
                 </div>
             </div>
         
 
-            <?php $attack = 1; ?>
-
             <div class="pokemon_2 col">
-                <h4 class='row'><?= $team2[$selected]->getName(); ?></h4>
+                <p class="row fs-3"><?= $team2[$selected]->getName(); ?></p>
                 <img class="row <?= $team2[$selected]->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $team2[$selected]->getId() ?>.png">
                 <p class='row'>Points de vie : <?= $team2[$selected]->getHealth(); ?></p>
                 <p class='row'>Type : <?= $team2[$selected]->getType(); ?></p>
-                <div class="row row-cols-2">
-                <?php foreach($team1[$selected]->moves as $move) : ?>
-                    <div>
+                <div class="moves row row-cols-2">
+                <?php foreach($team2[$selected]->moves as $move) : ?>
+                    <div class="move">
                         <p><?= $move->name ?></p>
                         <p>Degats : <?= $move->power ?></p>
                         <p>Type : <?= $move->type ?></p>
-                        <?php $attack++ ?>
                     </div>
                     <?php endforeach; ?>
                 </div>
             </div>
         </div>
     </div>
-        
+    <?php $_SESSION['turn']++; ?>
 
     <div class="text-center">
         <button class="btn btn-warning">Attaques</button>
