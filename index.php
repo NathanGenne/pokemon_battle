@@ -22,17 +22,6 @@ foreach($pokeListe as $pokemon)
     $$name = new Pokemon($pokemon);
 }
 
-print_r($listePokemons);
-echo '<br>';
-print_r($charizard->getMove_Name(0));
-print_r($charizard->attack_power(0, 3));
-echo '<br>';
-echo 'Vie du Dracofeu : '.$charizard->getHealth();
-$charizard->attacked($raikou->attack_power(0,$charizard->getId()), $raikou->getMove_Damage_class(0), $raikou->getId());
-echo $raikou->getName().' attaque '.$charizard->getName().' avec '.$raikou->getMove_Name(0).' infligeant '.$charizard->getDamageSuffered().' points de dégats';
-echo 'Vie du Dracofeu : '.$charizard->getHealth().'<br>';
-
-
 /* Génération des 2 équipes */
 $team1 = getRandomTeam($listePokemons);
 $team1Members = $team2Members = [];
@@ -46,6 +35,7 @@ foreach($team2 as $member){
 	$team2Members[] = $$member;
 }
 $_SESSION['team2'] = $team2Members;
+
 
 /* Appel des vues selon la valeur d'action inscrite dans l'url */
 if(isset($_GET['action'])) {
