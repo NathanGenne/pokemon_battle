@@ -19,35 +19,38 @@ require_once 'function.php';
 
             <?php foreach($listePokemons as $pokemon) : ?>
 
-            <div class="pokemon_button col">
-                    <img id="<?= $$pokemon->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $$pokemon->getId() ?>.png">
+            <div class="pokemon_buton col">
+                    <img class="<?= $$pokemon->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $$pokemon->getId() ?>.png">
                     <p class="name"><?= $$pokemon->getName() ?></p>
             </div>
+            <?php
+            endforeach;
+            ?>
 
-            <script>
-                var buttons = getElementsByClassName("pokemon_button");
-                for(buttons of button) {
-                    button.addEventListener("click", addToTeam);
-                }
-                
-                function addToTeam() {
-                    button.addClass("d-none");
-                }
-            </script>
+            <?php foreach($team as $pokemon) : ?>
 
+            <div class="pokemon_buton col">
+                    <img class="<?= $$pokemon->getId() ?>" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<?= $$pokemon->getId() ?>.png">
+                    <p class="name"><?= $$pokemon->getName() ?></p>
+            </div>
             <?php
             endforeach;
             ?>
 
             <script>
-                var button = getElementsByClassName("pokemon_button");
-                button.addEventListener("click", addToTeam);
-
-                function addToTeam() {
-                    button.addClass("bg-dark");
+                var butons = document.getElementsByClassName("pokemon_buton");
+                for(butons of buton) {
+                    buton.addEventListener("click", function() {
+                        pokemon = buton.getElementsByClassName("name").innerHTML;
+                        team.add(pokemon);
+                    });
                 }
+                document.getElementsByClassName("pokemon_buton").innerHTML = butons;
             </script>
+            
+            <div class='12'>
 
+            </div> 
         </div>
     </div>
 </body>
