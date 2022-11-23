@@ -55,9 +55,12 @@ $charizard->attacked($raikou->attack_power(0,$charizard->getId()), $raikou->getM
 echo $raikou->getName().' attaque '.$charizard->getName().' avec '.$raikou->getMove_Name(0).' infligeant '.$charizard->getDamageSuffered().' points de dégats';
 echo 'Vie du Dracofeu : '.$charizard->getHealth();
 
+/* Génération des 2 équipes */
 $team1 = getRandomTeam($listePokemons);
 $team2 = getRandomTeam($listePokemons);
+print_r($team2);
 
+/* Appel des vues selon la valeur d'action inscrite dans l'url */
 if(isset($_GET['action'])) {
 	if ($_GET['action'] == 'selector') {
 		require_once('vue/select_vue.php');
