@@ -1,9 +1,4 @@
 <?php 
-require_once 'function.php';
-
-?>
-
-<?php 
 
     $json_file = 'assets/data/pokemons.json';
     /* Si le fichier pokemons.json n'existe pas ou est vide, alors on le rempli avec la liste de pokemons entrés en paramètre */
