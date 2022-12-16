@@ -29,15 +29,17 @@
                 <p class='row'>Type : <?= $team1[$selected]->getType(); ?></p>
                 <div class="moves row row-cols-2">
                     <?php foreach($team1[$selected]->moves as $move) : ?>
-                    <div class="move">
-                        <p><?= $move->name ?></p>
+                    <button class="attack-btn">
+                        <div class="flex-attack">
+                            <p><?= $move->name ?></p>
+                            <p>Type : <?= $move->type ?></p>
+                        </div>
                         <p>Degats : <?= $move->power ?></p>
-                        <p>Type : <?= $move->type ?></p>
-                    </div>
+                    </button>
                     <?php endforeach; ?>
                 </div>
             </div>
-        
+            
 
             <div class="pokemon_2 col">
                 <p class="row fs-3"><?= $team2[$selected]->getName(); ?></p>
@@ -46,11 +48,13 @@
                 <p class='row'>Type : <?= $team2[$selected]->getType(); ?></p>
                 <div class="moves row row-cols-2">
                 <?php foreach($team2[$selected]->moves as $move) : ?>
-                    <div class="move">
-                        <p><?= $move->name ?></p>
+                    <button class="attack-btn">
+                        <div class="flex-attack">
+                            <p><?= $move->name ?></p>
+                            <p>Type : <?= $move->type ?></p>
+                        </div>
                         <p>Degats : <?= $move->power ?></p>
-                        <p>Type : <?= $move->type ?></p>
-                    </div>
+                    </button>
                     <?php endforeach; ?>
                 </div>
             </div>
